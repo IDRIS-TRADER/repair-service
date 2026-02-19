@@ -129,10 +129,19 @@ if (!isset($_SESSION['role'])) {
 <div class="top-bar">
     <div class="role-title">
         <?php
+        // Сначала проверяем, есть ли роль в сессии
+        if (!isset($_SESSION['role'])) {
+            header('Location: index.php');
+            exit;
+        }
+
+        // Теперь безопасно выводим название роли
         if ($_SESSION['role'] === 'dispatcher') {
             echo "Панель диспетчера";
         } elseif ($_SESSION['role'] === 'master') {
-            echo "Мастер: " . ucfirst($_SESSION['master']);
+            echo "Панель мастера: " . ucfirst($_SESSION['master']);
+        } elseif ($_SESSION['role'] === 'client') {
+            echo "Панель клиента";
         }
         ?>
     </div>
@@ -141,6 +150,7 @@ if (!isset($_SESSION['role'])) {
         <button type="submit" class="logout-btn">Выйти</button>
     </form>
 </div>
+
 
 
 
