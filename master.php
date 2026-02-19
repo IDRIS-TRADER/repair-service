@@ -68,8 +68,6 @@ $stmt->execute([$masterId]);
 $requests = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
-<h1>Панель мастера: <?= ucfirst($masterName) ?></h1>
-
 <table border="1">
 <tr>
     <th>Клиент</th>
@@ -105,6 +103,7 @@ $requests = $stmt->fetchAll(PDO::FETCH_ASSOC);
 </table>
 
 <?php require 'footer.php'; ?>
+
 
 
 
