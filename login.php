@@ -1,4 +1,11 @@
 <?php
+
+session_start();
+
+if (isset($_GET['role']) && $_GET['role'] === 'client') {
+    $_SESSION['role'] = 'client';
+}
+
 require 'header.php';
 require 'config/db.php';
 
@@ -24,5 +31,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </form>
 
 <?php require 'footer.php'; ?>
+
 
 
