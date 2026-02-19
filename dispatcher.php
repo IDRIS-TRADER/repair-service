@@ -29,7 +29,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 $requests = $pdo->query("SELECT * FROM requests ORDER BY createdAt DESC")->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
-<h1>Панель диспетчера</h1>
 <table border="1">
 <tr>
     <th>Клиент</th>
@@ -59,6 +58,7 @@ $requests = $pdo->query("SELECT * FROM requests ORDER BY createdAt DESC")->fetch
 </table>
 
 <?php require 'footer.php'; ?>
+
 
 
 
