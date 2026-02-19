@@ -96,7 +96,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <div class="container">
     <h1>Войти в систему</h1>
 
-    <a href="login.php">
+    <a href="login.php?role=client">
         <button type="button">Как клиент</button>
     </a>
 
@@ -119,6 +119,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 </body>
 </html>
+
 
 
 
